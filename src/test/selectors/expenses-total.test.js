@@ -2,12 +2,12 @@ import ExpensesTotal from '../../selectors/expenses-total';
 import expenses from '../fixtures/expenses';
 
 test('should return 0 for no expenses', () => {
-    const sum = ExpensesTotal();
+    const sum = ExpensesTotal([]);
     expect(sum).toBe(0);
 });
 
 test('should return sum of one expense', () => {
-    const sum = ExpensesTotal(expenses[0]);
+    const sum = ExpensesTotal([expenses[0]]);
     expect(sum).toBe(expenses[0].amount);
 });
 

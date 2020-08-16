@@ -8,24 +8,24 @@ export const ExpenseSummary = (props) => (
     <div>
         {
             props.count > 0 ? 
-            <p>
+            <h2>
                 Viewing {props.count} 
                 {props.count === 1 ?  ' expense ' : ' expenses '} 
                 with total expenditure of {numeral(props.total/100).format('$0,0.00')}
-            </p>
+            </h2>
             : 
-                <p>
+                <h2>
                 Viewing 0 expenses
-            </p>
+            </h2>
         }
     </div>
 );
 
 const mapStateToProps = (state) => {
+    const visibleExpenses = SelectExpenses(state.expenses, state.filters);
     return {
-        expenses: SelectExpenses(state.expenses, state.filters),
-        total: SelectExpensesTotal(SelectExpenses(state.expenses, state.filters)),
-        count: SelectExpenses(state.expenses, state.filters).length
+        total: SelectExpensesTotal(visibleExpenses),
+        count: visibleExpenses.length
     };
 };
 
