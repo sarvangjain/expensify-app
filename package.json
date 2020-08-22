@@ -1,5 +1,5 @@
 {
-  "name": "budget-app",
+  "name": "expensify-app",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Sarvang Jain",
@@ -54,5 +54,8 @@
     "jest": "^26.2.2",
     "react-test-renderer": "^16.13.1",
     "webpack-dev-server": "^3.11.0"
+  },
+  "engines": {
+    "node": "14.6.0"
   }
 }
