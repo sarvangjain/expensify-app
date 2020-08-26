@@ -107,7 +107,7 @@ test('should set up edit expense action', () => {
 });
 
 test('should edit expenses in firebase', (done) => {
-    const store = createMockStore();
+    const store = createMockStore({});
     const id = expenses[1].id;
     const updates = {
         description: 'test update',
